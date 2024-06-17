@@ -1,33 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WhatsApp Bulk Messenger</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Bulk Messenger</h1>
-        <form id="messageForm">
-            <div class="form-group">
-                <label for="contacts">Contacts (separate with commas):</label>
-                <textarea id="contacts" name="contacts" rows="3" placeholder="Enter phone numbers, separated by commas" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="3" placeholder="Enter your message" required>Hi</textarea>
-            </div>
-            <div class="form-group">
-                <label for="imageFile">Image File (optional):</label>
-                <input type="file" id="imageFile" name="imageFile" accept="image/*">
-            </div>
-            <div class="form-group" id="imagePreviewContainer" style="display: none;">
-                <img id="imagePreview" src="#" alt="Image Preview" style="max-width: 100%; max-height: 200px;">
-            </div>
-            <button type="submit" id="send">Send Messages</button>
-        </form>
+      <h1>Bulk Messenger</h1>
+      <form id="messageForm">
+        <div class="form-group">
+          <label for="contacts"
+            >Contacts (separate with commas) : <span id="contactsCount"></span
+          ></label>
+          <textarea
+            id="contacts"
+            name="contacts"
+            rows="5"
+            placeholder="Enter phone numbers, separated by commas"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="message">Message : <span id="messageCount"></span></label>
+          <textarea
+            id="message"
+            name="message"
+            rows="3"
+            placeholder="Enter your message"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group" id="intervalInputs">
+          <label for="messageInterval">Message Interval :</label>
+          <input
+            type="number"
+            id="messageInterval"
+            name="messageInterval"
+            value="5"
+            required
+          />
+          <label for="clickInterval">Click Interval :</label>
+          <input
+            type="number"
+            id="clickInterval"
+            name="clickInterval"
+            value="1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="fileUploadButton">Attach Files :</label>
+          <button type="button" id="fileUploadButton">
+            Attach Files (optional)
+          </button>
+        </div>
+        <div class="form-group" id="fileInputContainer" style="display: none">
+          <div class="file-type-buttons">
+            <button type="button" id="imageVideoButton" class="active">
+              Photos & Videos
+            </button>
+            <button type="button" id="documentButton">Document</button>
+          </div>
+          <div class="form-group" id="image/video">
+            <label for="imageFiles" class="custom-file-label"
+              >Click to Upload Photos & Videos</label
+            >
+            <input
+              type="file"
+              id="imageFiles"
+              name="imageFiles"
+              accept="image/*,video/mp4,video/3gpp,video/quicktime"
+              multiple
+            />
+          </div>
+          <div class="form-group" id="document" style="display: none">
+            <label for="documentFiles" class="custom-file-label"
+              >Click to Upload Files</label
+            >
+            <input
+              type="file"
+              id="documentFiles"
+              name="documentFiles"
+              accept="*"
+              multiple
+            />
+          </div>
+          <div class="form-group" id="fileInfo" style="display: none">
+            <!-- Container for file information -->
+          </div>
+          <div
+            class="form-group"
+            id="imagePreviewContainer"
+            style="display: none"
+          >
+            <!-- Container for image previews -->
+          </div>
+        </div>
+        <button type="submit" id="send">Send Messages</button>
+        <button type="button" id="stop" style="display: none">Stop</button>
+      </form>
     </div>
+    <footer>
+      <label
+        >Created by -
+        <a
+          href="https://github.com/ashishkumar5338?tab=repositories"
+          target="_blank"
+          >Ashish Kumar</a
+        >
+      </label>
+      <span id="timer" style="display: none"
+        >Time left : <span id="timeLeft"></span
+      ></span>
+    </footer>
+    <footer>Please don't close this extention or switch tabs between browser during Message Sending Process. </footer>
     <script src="popup.js"></script>
-</body>
+  </body>
 </html>

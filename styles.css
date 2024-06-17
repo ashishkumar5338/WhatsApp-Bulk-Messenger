@@ -1,14 +1,16 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  width: 350px; /* Fixed width container */
+  width: 350px;
+  /* Fixed width container */
   margin: 0 auto;
   background-color: #f9f9f9;
 }
 
 .container {
   width: 100%;
-  max-width: 400px; /* Limiting the maximum width of the container */
+  max-width: 400px;
+  /* Limiting the maximum width of the container */
   margin: 0 auto;
 }
 
@@ -21,8 +23,9 @@ h1 {
 
 textarea,
 input[type="file"] {
-  width: calc(100% - 22px); /* Adjusting width to account for padding */
-  height: 120px;
+  width: calc(100% - 22px);
+  /* Adjusting width to account for padding */
+  /* height: 120px; */
   margin-bottom: 15px;
   padding: 10px;
   box-sizing: border-box;
@@ -33,7 +36,8 @@ input[type="file"] {
 }
 
 input[type="file"] {
-  height: auto; /* Let the height be determined by the browser */
+  height: auto;
+  /* Let the height be determined by the browser */
 }
 
 button {
@@ -61,4 +65,113 @@ label {
   font-weight: bold;
   font-size: 14px;
   color: #333;
+}
+
+.file-type-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.file-type-buttons button {
+  flex: 1;
+  margin-right: 5px;
+}
+
+.file-type-buttons button:last-child {
+  margin-right: 0;
+}
+
+button.active {
+  background-color: #007bff;
+}
+
+#imagePreviewContainer img,
+#imagePreviewContainer video,
+#imagePreviewContainer iframe {
+  max-width: 100%;
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  display: none;
+  /* Hide the default file input */
+}
+
+.custom-file-label {
+  display: block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.custom-file-label:hover {
+  background-color: #0056b3;
+}
+
+#fileInfo {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+#fileInfo ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+#fileInfo ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+
+#intervalInputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#intervalInputs label,
+#intervalInputs input[type="number"] {
+  /* flex: 1; */
+  margin-right: 10px;
+}
+
+#intervalInputs input[type="number"] {
+  width: 10%;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 5px;
+  background-color: #f1f1f1;
+  margin-top: 15px;
+  /* border-top: 1px solid #ddd; */
+}
+
+footer label {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
