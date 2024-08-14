@@ -162,7 +162,8 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 
         async function sendDocuments(type, fileUrls, fileNames, fileTypes) {
             console.log("%cSending Files from URLs", 'color: green; font-weight: bold;');
-            const attachMenuSelector = '[data-icon="attach-menu-plus"]';
+            // const attachMenuSelector = '[data-icon="attach-menu-plus"]';
+            const attachMenuSelector = '[data-icon="plus"]';
             let inputFileSelector;
             if (type == "document") {
                 inputFileSelector = 'input[accept="*"][multiple][type="file"]';
