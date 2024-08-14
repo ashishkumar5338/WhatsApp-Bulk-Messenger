@@ -14,7 +14,7 @@ WhatsApp Bulk Messenger 2.0 is a Chrome extension designed to send bulk messages
 1. **Download the Repository**:
    - Click the green "Code" button at the top right of this page.
    - Select "Download ZIP" or click the link below:
-     - [Download WhatsApp Bulk Messenger 2.0.zip](https://github.com/user-attachments/files/15863723/WhatsApp.Bulk.Messenger.2.0.zip)
+     - [Download WhatsApp Bulk Messenger 2.0.zip](https://github.com/ashishkumar5338/WhatsApp-Bulk-Messenger/archive/refs/heads/main.zip)
    - Extract the downloaded ZIP file to a folder on your computer.
 
 2. **Open Chrome Extensions Page**:
