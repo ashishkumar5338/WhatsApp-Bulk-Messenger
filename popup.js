@@ -264,6 +264,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         video.controls = true;
                         video.style.maxWidth = '100%';
                         video.style.maxHeight = '200px';
+                        video.style.width = 'calc(100% + 20px)';
                         previewContainer.appendChild(video);
                     } else if (file.type === 'application/pdf') {
                         const iframe = document.createElement('iframe');

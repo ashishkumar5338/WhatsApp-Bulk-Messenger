@@ -46,7 +46,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
                     await wait(interval.click);
 
                     // Wait for the "Chat with ....." button to appear and click it
-                    const chatButtonSelector = 'div[aria-label="Chat with "]';
+                    const chatButtonSelector = 'span[data-icon="chat-refreshed"]';
                     const chatButton = await waitForElement(chatButtonSelector);
                     if (chatButton === 'Timeout waiting for element div[aria-label="Chat with "]') {
                         notRegistered.push(contact);
@@ -149,7 +149,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 
             const sendInterval = setInterval(async () => {
                 attempts++;
-                const sendButton = document.querySelector('span[data-icon="send"]');
+                const sendButton = document.querySelector('span[data-icon="wds-ic-send-filled"]');
                 if (sendButton) {
                     clearInterval(sendInterval);
                     sendButton.click();
@@ -163,7 +163,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
         async function sendDocuments(type, fileUrls, fileNames, fileTypes) {
             console.log("%cSending Files from URLs", 'color: green; font-weight: bold;');
             // const attachMenuSelector = '[data-icon="attach-menu-plus"]';
-            const attachMenuSelector = '[data-icon="plus"]';
+            const attachMenuSelector = '[data-icon="plus-rounded"]';
             let inputFileSelector;
             if (type == "document") {
                 inputFileSelector = 'input[accept="*"][multiple][type="file"]';
@@ -241,7 +241,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
         }
 
         async function newChatButtonClick() {
-            const newChatButtonSelector = 'div[role="button"][title="New chat"]';
+            const newChatButtonSelector = 'button[role="button"][title="New chat"][aria-label="New chat"]';
             const newChatButton = await waitForElement(newChatButtonSelector);
             newChatButton.click();
         }

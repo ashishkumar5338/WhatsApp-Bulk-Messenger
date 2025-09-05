@@ -1,177 +1,161 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  width: 350px;
-  /* Fixed width container */
-  margin: 0 auto;
-  background-color: #f9f9f9;
-}
-
-.container {
-  width: 100%;
-  max-width: 400px;
-  /* Limiting the maximum width of the container */
-  margin: 0 auto;
-}
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #333;
-}
-
-textarea,
-input[type="file"] {
-  width: calc(100% - 22px);
-  /* Adjusting width to account for padding */
-  /* height: 120px; */
-  margin-bottom: 15px;
-  padding: 10px;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: none;
-  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-input[type="file"] {
-  height: auto;
-  /* Let the height be determined by the browser */
+body {
+  background: #f0f2f5;
+  padding: 10px;
+  width: 360px;
+  /* Compact width */
 }
 
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+/* Container */
+.container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-button:hover {
-  background-color: #45a049;
-}
-
-.form-group {
+/* Heading */
+.container h1 {
+  text-align: center;
+  color: #25d366;
   margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 12px;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 14px;
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
   color: #333;
+}
+
+textarea,
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  resize: none;
+  transition: 0.2s;
+}
+
+textarea:focus,
+input:focus {
+  border-color: #25d366;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.2);
+}
+
+/* File Upload */
+#fileUploadButton {
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+#fileUploadButton:hover {
+  background: #1da851;
 }
 
 .file-type-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  gap: 6px;
+  margin-bottom: 8px;
 }
 
 .file-type-buttons button {
   flex: 1;
-  margin-right: 5px;
-}
-
-.file-type-buttons button:last-child {
-  margin-right: 0;
-}
-
-button.active {
-  background-color: #007bff;
-}
-
-#imagePreviewContainer img,
-#imagePreviewContainer video,
-#imagePreviewContainer iframe {
-  max-width: 100%;
-  max-height: 200px;
-  margin-bottom: 10px;
-}
-
-input[type="file"] {
-  display: none;
-  /* Hide the default file input */
-}
-
-.custom-file-label {
-  display: block;
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #eee;
   cursor: pointer;
-  margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
-.custom-file-label:hover {
-  background-color: #0056b3;
+.file-type-buttons button.active {
+  background: #25d366;
+  color: #fff;
 }
 
-#fileInfo {
-  margin-top: 10px;
+/* Submit & Stop Buttons */
+#send,
+#stop {
+  width: 100%;
   padding: 10px;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-}
-
-#fileInfo ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin: 0;
-}
-
-#fileInfo ul li {
-  margin-bottom: 5px;
+  border-radius: 8px;
+  border: none;
   font-size: 14px;
-  color: #333;
+  font-weight: 600;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-
-#intervalInputs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
+#send {
+  background: #25d366;
+  color: white;
 }
 
-#intervalInputs label,
-#intervalInputs input[type="number"] {
-  /* flex: 1; */
-  margin-right: 10px;
+#send:hover {
+  background: #1da851;
 }
 
-#intervalInputs input[type="number"] {
-  width: 10%;
+#stop {
+  background: #ff4d4d;
+  color: white;
 }
 
-/* Footer styles */
+#stop:hover {
+  background: #e04343;
+}
+
+/* Preview */
+#imagePreviewContainer img {
+  max-width: 100%;
+  margin-top: 6px;
+  border-radius: 6px;
+}
+
+/* Footer */
 footer {
+  padding: 8px;
   text-align: center;
-  padding: 5px;
-  background-color: #f1f1f1;
-  margin-top: 15px;
-  /* border-top: 1px solid #ddd; */
-}
-
-footer label {
-  margin-top: 5px;
-  font-size: 14px;
-  color: #333;
+  font-size: 12px;
+  color: #555;
+  border-top: 1px solid #e0e0e0;
 }
 
 footer a {
-  color: #007bff;
+  color: #25d366;
   text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 footer a:hover {
+  color: #128c7e;
   text-decoration: underline;
 }
+
+

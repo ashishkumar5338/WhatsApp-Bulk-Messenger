@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "WhatsApp Bulk Messenger",
-  "version": "2.0",
+  "version": "2.1",
   "description": "Send bulk messages on WhatsApp Web",
   "permissions": [
     "storage",
