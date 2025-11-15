@@ -241,7 +241,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
         }
 
         async function newChatButtonClick() {
-            const newChatButtonSelector = 'button[role="button"][title="New chat"][aria-label="New chat"]';
+            const newChatButtonSelector = 'div[role="button"][aria-label="New chat"]';
             const newChatButton = await waitForElement(newChatButtonSelector);
             newChatButton.click();
         }
@@ -317,3 +317,4 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
     }
 
 });
+
